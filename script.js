@@ -6,7 +6,16 @@ const typeInputs = [...document.querySelectorAll('input[name="type"]')];
 const type = () => typeInputs.find(el => el.checked).value;
 function updateType(){ $('deductions').hidden = type() !== 'gross'; $('results').hidden = true; }
 typeInputs.forEach(el => el.addEventListener('change',updateType));
-function getNumber(id){ const element = $(id); if(element.value.trim()==='') return NaN; return Number(element.value); }
+function parseSalary(value){
+ const raw = value.trim().replace(/\s/g, '');
+ // Valencià: 1.234 = 1234; 1.234,56 = 1234.56; 1234,56 = 1234.56.
+ // També accepta 1234.56 com a decimal sense separador de milers.
+ if (/^\d{1,3}(?:\.\d{3})+(?:,\d{1,2})?$/.test(raw)) return Number(raw.replace(/\./g, '').replace(',', '.'));
+ if (/^\d+(?:,\d{1,2})?$/.test(raw)) return Number(raw.replace(',', '.'));
+ if (/^\d+\.\d{1,2}$/.test(raw)) return Number(raw);
+ return NaN;
+}
+function getNumber(id){ const element = $(id); if(element.value.trim()==='') return NaN; return ['salary','irpf','ss'].includes(id) ? parseSalary(element.value) : Number(element.value); }
 function estimate({salary,payments,irpf,ss,days,hours,dayhours,workdays,isNet}){
  const rate = isNet ? 0 : (irpf + ss)/100;
  const grossMonthly = isNet ? null : salary;

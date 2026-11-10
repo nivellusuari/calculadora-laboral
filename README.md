@@ -1,8 +1,11 @@
-# 🧮 Calculadora laboral · Descompte per vaga
+# Calculadora laboral · Descompte per vaga
 
 ### 👉 [OBRIR LA CALCULADORA](https://nivellusuari.github.io/calculadora-laboral/)
 
-Web gratuïta, de codi font obert i en valencià per a estimar el descompte salarial per secundar una vaga.
+Web gratuïta, de codi font obert i en valencià per a estimar el descompte salarial per secundar una vaga a Espanya.
+
+## Format del salari
+Admet el format habitual valencià: `1.234` són **1.234 euros**, i `1.234,56` són **1.234 euros i 56 cèntims**. També accepta `1234`, `1234,56` i `1234.56`.
 
 ## Funcions
 - Introduir salari **brut** o **net** mensual i nombre de pagues (12–16).
@@ -29,3 +32,5 @@ Els càlculs s'executen al navegador. Els fitxers no carreguen biblioteques, fon
 
 ## Desenvolupament
 Obri `index.html` en un navegador modern, o servix la carpeta amb `python3 -m http.server 8000`. Sense dependències ni procés de compilació.
+
+Els percentatges d’IRPF i Seguretat Social accepten indistintament coma o punt decimal (`4,7` o `4.7`).
