@@ -1,4 +1,6 @@
-# Calculadora laboral · Descompte per vaga
+# 🧮 Calculadora laboral · Descompte per vaga
+
+### 👉 [OBRIR LA CALCULADORA](https://nivellusuari.github.io/calculadora-laboral/)
 
 Web gratuïta, de codi font obert i en valencià per a estimar el descompte salarial per secundar una vaga.
 
