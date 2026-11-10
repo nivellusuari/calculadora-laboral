@@ -1,6 +1,6 @@
 # Calculadora laboral · Descompte per vaga
 
-Web gratuïta, de codi font obert i en valencià per a estimar el descompte salarial per secundar una vaga a Espanya.
+Web gratuïta, de codi font obert i en valencià per a estimar el descompte salarial per secundar una vaga.
 
 ## Funcions
 - Introduir salari **brut** o **net** mensual i nombre de pagues (12–16).
